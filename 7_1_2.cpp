@@ -16,31 +16,32 @@ class cricket{
 				cin >> a;
 				cout << "Enter Test match overs : ";
 				cin >> b;
+				cout << "Cricket is very popular game in india." << endl;
 			}
 };
 
 class t20match : public cricket
 {	
 	public :
-		void gettotalovers(int a){
+		void gettotalovers(){
 			
 			cout << "T20 match overs is : " << a << endl;
 		}
 };
 
-class testmatch : public cricket
+class testmatch : public t20match
 {	
 	public :
-		void gettotalovers(int b){
+		void gettotalovers(){
 			cout << "Test Match Per Day Overs is : " << b << endl;
 		}
 };
 
 main(){
-	cricket c1;
-	t20match t1;
+	
 	testmatch t2;
-	c1.gettotalovers();
-	t1.gettotalovers(c1.a);
-	t2.gettotalovers(c1.b);
+	
+	t2.cricket::gettotalovers();
+	t2.t20match::gettotalovers();
+	t2.gettotalovers();
 }
